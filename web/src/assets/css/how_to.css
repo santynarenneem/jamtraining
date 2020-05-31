@@ -1,0 +1,7 @@
+.slick-prev:before,
+.slick-next:before {
+  color: #000!important;
+}
+.heroImage{
+  clip: rect(0px,60px,200px,0px);
+}
