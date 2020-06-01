@@ -2,7 +2,7 @@ import React from 'react'
 import {graphql} from 'gatsby'
 import Slider from "react-slick";
 import Container from '../components/container'
-import Layout from '../components/layout'
+import Layout from '../containers/layout'
 import Slide from '../components/slides'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,7 +17,9 @@ const settings = {
 function home({data}) {
     return (
         <Layout>
+
             <Container>
+                {console.log(data)}
                 {console.log(data.sanityLandingLayout.landingSections)}
                 {data
                     .sanityLandingLayout
