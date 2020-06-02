@@ -16,6 +16,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle, data}) => (
 
 
             <button
+            name="Menu_icon"
                 className={styles.toggleNavButton}
                 onClick={showNav
                 ? onHideNav

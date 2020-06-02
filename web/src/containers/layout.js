@@ -1,5 +1,6 @@
 import {graphql, StaticQuery} from 'gatsby'
 import React, {useState} from 'react'
+
 import Layout from '../components/layout'
 
 const query = graphql`

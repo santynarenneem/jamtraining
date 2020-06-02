@@ -10,6 +10,7 @@ import Slide from '../components/slides'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../assets/css/home.css";
+import SEO from '../components/seo'
 import Grid from '@material-ui/core/Grid';
 const settings = {
     dots: true,
@@ -62,7 +63,7 @@ function home({data}) {
     return (
         <Layout>
 
-
+        <SEO title="Home" description="NASA"  />
                 {console.log(data)}
                 {console.log(data.sanityLandingLayout.landingSections)}
                 {data
