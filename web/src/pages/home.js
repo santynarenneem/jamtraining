@@ -1,11 +1,13 @@
-import React, { Suspense } from 'react'
+import React, { lazy } from 'react'
 import {graphql} from 'gatsby'
 
 import Image from 'gatsby-image'
 import Slider from "react-slick";
-import Layout from '../containers/layout'
+// import Layout from '../containers/layout'
 import BlockContent from '@sanity/block-content-to-react'
-
+const LayoutLazy = React.lazy(() =>
+  import("../containers/layout")
+)
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../assets/css/home.css";
@@ -60,7 +62,8 @@ const settingsOne = {
 };
 function home({data}) {
     return (
-        <Layout>
+      <React.Suspense fallback={<div />}>
+        <LayoutLazy>
 
         <SEO title="Home" description="NASA"  />
                 {console.log(data)}
@@ -141,7 +144,8 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
                       }
                     })}
 
-        </Layout>
+        </LayoutLazy>
+        </React.Suspense>
     )
 }
 export const data = graphql `
