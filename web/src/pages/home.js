@@ -1,24 +1,67 @@
 import React from 'react'
 import {graphql} from 'gatsby'
+import {Link} from 'gatsby'
 import Slider from "react-slick";
 import Container from '../components/container'
 import Layout from '../containers/layout'
+import BlockContent from '@sanity/block-content-to-react'
 import Slide from '../components/slides'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../assets/css/home.css";
+import Grid from '@material-ui/core/Grid';
 const settings = {
     dots: true,
     infinite: true,
     speed: 500,
+    lazyLoad: true,
     slidesToShow: 1,
     slidesToScroll: 1
+};
+const settingsOne = {
+
+
+  lazyLoad: true,
+  className: "center",
+      centerMode: true,
+      infinite: true,
+      centerPadding: "0px",
+  slidesToShow: 4,
+  initialSlide: 0,
+  slidesToScroll: 4,
+  speed: 500,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 };
 function home({data}) {
     return (
         <Layout>
 
-            <Container>
+
                 {console.log(data)}
                 {console.log(data.sanityLandingLayout.landingSections)}
                 {data
@@ -26,13 +69,50 @@ function home({data}) {
                     .landingSections
                     .map(function (sec) {
                         if (sec.slides == undefined) {
-                            return (sec.textBlockName);
+
+                          return (
+                            <BlockContent blocks={sec._rawTextBlockBody}/>
+
+
+                            );
 
                         } else {
+if(sec.sliderName == "Random Tile Slider Authored Tommy"){
+  return (
+    <div key={sec.id}>
+
+        <h1 className="sliderTileTitle">{sec.sliderName}</h1>
+        <Slider
+            style={{
+            margin: 40,
+            padding:10
+        }}
+            {...settingsOne}>
+            {sec
+                .slides
+                .map(element => {
+                    return (
+                        <div  className="sliderDivTile" key={element.id}>
+                        <div  style={{margin:"20px"}}>
+                        <img className="sliderImageTile" src={element.heroImage.asset.url}/>
+                            <span className="sliderContentTile">
+                                {element.headline}</span>
+                                </div>
+                        </div>
+
+                    );
+
+                })}
+        </Slider>
+
+    </div>
+
+);
+}else{
                             return (
                                 <div key={sec.id}>
-                                    <h1>{sec.__typename}</h1>
-                                    <h6>{sec.sliderName}</h6>
+
+                                  <div className="sliderDiv">
                                     <Slider
                                         style={{
                                         margin: 40
@@ -42,24 +122,24 @@ function home({data}) {
                                             .slides
                                             .map(element => {
                                                 return (
-                                                    <div className="sliderDiv" key={element.id}>
-                                                        <img className="sliderImage" src={element.heroImage.asset.url}/>
+                                                  <div className="sliderDivBlock" key={element.id}>
+                                                      <img className="sliderImage" src={element.heroImage.asset.url}/>
                                                         <span className="sliderContent">
-                                                            {element.headline}</span>
-                                                    </div>
+                                                            {element.headline} <br/><Link to={element.slug.current}>Go To Article</Link></span>
+                                                  </div>
 
                                                 );
 
                                             })}
                                     </Slider>
-
+                                    </div>
                                 </div>
 
                             );
                         }
-
+                      }
                     })}
-            </Container>
+
         </Layout>
     )
 }
@@ -81,6 +161,9 @@ query HomeQuery {
                 url
               }
             }
+            slug {
+              current
+            }
           }
           ... on SanityGalleryArticle {
             id
@@ -89,6 +172,9 @@ query HomeQuery {
               asset {
                 url
               }
+            }
+            slug {
+              current
             }
           }
           ... on SanityHowToArticle {
@@ -99,12 +185,16 @@ query HomeQuery {
                 url
               }
             }
+            slug {
+              current
+            }
           }
         }
       }
       ... on SanityTextBlock {
         id
         textBlockName
+        _rawTextBlockBody
       }
 
     }

@@ -55,6 +55,9 @@ async function createHowToPostPages (graphql, actions) {
             id
             headline
             subheading
+            tags {
+              tagName
+            }
             slug {
               current
             }
@@ -76,12 +79,20 @@ async function createHowToPostPages (graphql, actions) {
   postEdges
 
     .forEach((edge, index) => {
-
-      const path = `how_to/${edge.node.slug.current}`
+      const tagVal =[];
+      const {id, slug = {},tags =[]} = edge.node
+edge.node.tags.forEach((tag,index)=>{
+tagVal.push(tag.tagName);
+})
+      const path = `how_to/${slug.current}`
 
       createPage({
-        path,
-        component: require.resolve('./src/pages/how_to_post.js')
+        path : path,
+        component: require.resolve('./src/pages/how_to_post.js'),
+        context: {
+          id:id,
+          tagValue : tagVal
+        }
       })
     })
 }

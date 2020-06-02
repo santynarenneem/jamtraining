@@ -1,0 +1,22 @@
+.listed_nav {
+  display: none;
+  position: absolute;
+  color: #000;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+li{
+  padding-left: 20px;
+}
+.listed_nav_header:hover .listed_nav {
+  display: block;
+}
+.listed_nav a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}

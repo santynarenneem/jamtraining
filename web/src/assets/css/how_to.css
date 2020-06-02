@@ -5,3 +5,22 @@
 .heroImage{
   clip: rect(0px,60px,200px,0px);
 }
+.related-article{
+  margin:50px;
+  position: fixed;
+}
+.mainContent{
+margin:50px;
+}
+.rel-article-img{
+  width: 100%;
+}
+.rel-article-header{
+  padding-left: 10px;
+  width: fit-content;
+}
+@media(max-width:500px){
+  .related-article{
+    position: relative;
+  }
+}

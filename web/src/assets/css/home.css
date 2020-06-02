@@ -1,19 +1,128 @@
 .sliderImage{
 
-  width: 100%;
+  width: 60%;
   height: 400px;
+  object-fit: cover;
+}
+.slick-dots li button:before  {
+  color: rgb(75, 243, 100)!important;
+  font-size: 28px;
+}
+.slick-dots li button:before .slick-active  {
+  color: #000!important;
+  font-size: 28px;
+}
+.sliderImageTile{
+
+  width: 100%;
+  height: 250px;
   object-fit: cover;
 }
 .sliderContent{
   position: absolute;
-  bottom: 25px;
-  left: 16px;
+  top: 125px;
+  right: 0px;
+  width: 400px;
+  left: 580px;
+  word-wrap: break-word;
   font-size: 24px;
   padding: 10px;
+  height: 150px;
+  word-wrap: inherit;
   font-weight: bold;
-  color: #fff;
-  background-color:#B8F0C0;
+  color: #000;
+  background-color:rgb(255, 255, 255);
+}
+.sliderContentTile{
+  /* position: absolute; */
+  /* bottom: 25px; */
+  /* left: 16px; */
+  font-size: 18px;
+  align-content: flex-start;
+  margin-top: 10px;
+  font-weight: bold;
+  /* color: #fff; */
+  /* background-color:rgb(0, 162, 255); */
+}
+.sliderDivBlock{
+  position: relative;
+  margin-left: 150px;
+
 }
 .sliderDiv{
-  position: relative;
+  justify-content: center;
+  background-color: #B8F0C0;
+}
+.sliderTileTitle{
+  margin-left: 80px;
+}
+.sliderDivTile{
+
+
+  height: 250px;
+  width: 100px;
+}
+/* .slick-slide {
+  margin: 0 5px;
+} */
+
+/* // Fix external margins
+.slick-list {
+  margin: 0 -5px;
+}
+.slick-slider {
+  overflow: hidden;
+}
+
+// Move arrows on top of images
+.slick-prev {
+  left: 50px;
+  z-index: 1;
+}
+.slick-next {
+  right: 50px;
+} */
+
+@media(max-width:600px){
+  .sliderImage{
+
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  .sliderContent{
+    position: absolute;
+    top: 320px;
+    left:0px;
+    font-size: 24px;
+    padding: 10px;
+
+
+    font-weight: bold;
+    color: #000;
+    background-color:rgb(255, 255, 255);
+  }
+  .sliderDivBlock{
+    position: relative;
+    margin-left: 0px;
+    height: 450px;
+  }
+  .sliderDiv{
+
+    background-color: #B8F0C0;
+  }
+  .sliderContentTile{
+    /* position: absolute; */
+    /* bottom: 25px; */
+    /* left: 16px; */
+    font-size: 10px;
+    align-content: flex-start;
+    margin-top: 10px;
+    font-weight: bold;
+    /* color: #fff; */
+    /* background-color:rgb(0, 162, 255); */
+  }
+  .sliderTileTitle{
+    margin-left: 20px;
+  }
 }

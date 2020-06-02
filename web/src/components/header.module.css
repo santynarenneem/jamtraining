@@ -1,9 +1,22 @@
 @import '../styles/custom-media.css';
 @import '../styles/custom-properties.css';
-
+body{
+  margin:0;
+  overflow-x: hidden;
+  padding-top: 65px;
+}
 .root {
+  top:0;
   position: relative;
   z-index: 100;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;
+  background-color: #000;
+  color: #fff;
 }
 
 .wrapper {
@@ -11,6 +24,7 @@
   margin: 0 auto;
   max-width: 960px;
   padding: 1em;
+  justify-content: center;
   display: flex;
 
   @media (--media-min-small) {
