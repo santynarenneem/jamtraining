@@ -126,3 +126,13 @@ body{
 .showNav {
   display: block;
 }
+
+@media(max-width:600px){
+  .root{
+    text-align: right;
+  justify-content: right;
+  }
+  .toggleNavButton{
+    margin-left: inherit;
+  }
+}

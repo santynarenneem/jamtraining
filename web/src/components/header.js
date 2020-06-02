@@ -2,11 +2,6 @@ import {Link} from "gatsby";
 import React from "react";
 import Icon from "./icon";
 import {cn} from "../lib/helpers";
-import ListSubheader from '@material-ui/core/ListSubheader';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import "../assets/css/header_nav.css";
 import styles from "./header.module.css";
 
