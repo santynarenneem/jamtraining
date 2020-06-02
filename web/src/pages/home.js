@@ -4,10 +4,8 @@ import {graphql} from 'gatsby'
 import Image from 'gatsby-image'
 import Slider from "react-slick";
 import Layout from '../containers/layout'
+import BlockContent from '@sanity/block-content-to-react'
 
-// import BlockContent from '@sanity/block-content-to-react'
-const BlockContent = React.lazy(() => import('@sanity/block-content-to-react'));
-const Sliderlazy = React.lazy(() => import('react-slick'));
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../assets/css/home.css";
@@ -74,11 +72,9 @@ function home({data}) {
                         if (sec.slides == undefined) {
 
                           return (
-                            <Suspense fallback={<div>Loading...</div>}>
-                            <section>
+
                             <BlockContent blocks={sec._rawTextBlockBody}/>
-                            </section>
-                            </Suspense>
+
                             );
 
                         } else {
@@ -87,9 +83,7 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
     <div key={sec.id}>
 
         <h1 className="sliderTileTitle">{sec.sliderName}</h1>
-        <Suspense fallback={<div>Loading...</div>}>
-        <section>
-        <Sliderlazy
+        <Slider
             style={{
             margin: 40,
             padding:10
@@ -110,9 +104,7 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
                     );
 
                 })}
-        </Sliderlazy>
-        </section>
-        </Suspense>
+        </Slider>
 
     </div>
 
