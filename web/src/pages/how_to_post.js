@@ -28,7 +28,8 @@ const serializers = {
                 <img src={urlFetch(props2.node.asset)} alt={props2.node.alt}/>
             </div>
         ),
-        productReference: props3 => <p>{props3.node.product._ref}</p>,
+      /*   productReference: props3 => <p>{props3.node.product._ref}</p>, */
+      productReference: props3 => <p>test</p>,
         span: props4 => <h1>test</h1>,
 
         youTube: props5 => ({node}) => {
