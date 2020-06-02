@@ -1,13 +1,11 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import {graphql} from 'gatsby'
 
 import Image from 'gatsby-image'
 import Slider from "react-slick";
 import Layout from '../containers/layout'
 import BlockContent from '@sanity/block-content-to-react'
-const SliderLazy = React.lazy(() =>
-  import("react-slick")
-)
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../assets/css/home.css";
@@ -85,8 +83,7 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
     <div key={sec.id}>
 
         <h1 className="sliderTileTitle">{sec.sliderName}</h1>
-        <React.Suspense fallback={<div />}>
-        <SliderLazy
+        <Slider
             style={{
             margin: 40,
             padding:10
@@ -107,8 +104,7 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
                     );
 
                 })}
-        </SliderLazy>
-        </React.Suspense>
+        </Slider>
 
     </div>
 
