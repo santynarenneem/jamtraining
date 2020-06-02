@@ -1,6 +1,5 @@
 @import '../styles/custom-media.css';
 @import '../styles/custom-properties.css';
-<<<<<<< HEAD
 body{
   margin:0;
   overflow-x: hidden;
@@ -18,12 +17,6 @@ body{
   position: fixed;
   background-color: #000;
   color: #fff;
-=======
-
-.root {
-  position: relative;
-  z-index: 100;
->>>>>>> c4051dd440968ae4407044379d04672487802a47
 }
 
 .wrapper {
@@ -31,10 +24,7 @@ body{
   margin: 0 auto;
   max-width: 960px;
   padding: 1em;
-<<<<<<< HEAD
   justify-content: center;
-=======
->>>>>>> c4051dd440968ae4407044379d04672487802a47
   display: flex;
 
   @media (--media-min-small) {
