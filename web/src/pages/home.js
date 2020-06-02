@@ -3,15 +3,14 @@ import {graphql} from 'gatsby'
 import {Link} from 'gatsby'
 import Image from 'gatsby-image'
 import Slider from "react-slick";
-import Container from '../components/container'
 import Layout from '../containers/layout'
 import BlockContent from '@sanity/block-content-to-react'
-import Slide from '../components/slides'
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../assets/css/home.css";
 import SEO from '../components/seo'
-import Grid from '@material-ui/core/Grid';
+
 const settings = {
     dots: true,
     infinite: true,
