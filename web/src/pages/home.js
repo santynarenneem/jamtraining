@@ -1,6 +1,7 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 import {Link} from 'gatsby'
+import Image from 'gatsby-image'
 import Slider from "react-slick";
 import Container from '../components/container'
 import Layout from '../containers/layout'
@@ -94,7 +95,7 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
                     return (
                         <div  className="sliderDivTile" key={element.id}>
                         <div  style={{margin:"20px"}}>
-                        <img className="sliderImageTile" src={element.heroImage.asset.url}/>
+                        <Image className="sliderImageTile" fluid={element.heroImage.asset.fluid}/>
                             <span className="sliderContentTile">
                                 {element.headline}</span>
                                 </div>
@@ -123,7 +124,7 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
                                             .map(element => {
                                                 return (
                                                   <div className="sliderDivBlock" key={element.id}>
-                                                      <img className="sliderImage" src={element.heroImage.asset.url}/>
+                                                      <Image className="sliderImage" fluid={element.heroImage.asset.fluid}/>
                                                         <span className="sliderContent">
                                                             {element.headline} <br/><Link to={element.slug.current}>Go To Article</Link></span>
                                                   </div>
@@ -158,7 +159,9 @@ query HomeQuery {
             headline
             heroImage {
               asset {
-                url
+                fluid(maxWidth: 700) {
+                  ...GatsbySanityImageFluid_withWebp
+                }
               }
             }
             slug {
@@ -170,7 +173,9 @@ query HomeQuery {
             headline
             heroImage {
               asset {
-                url
+                fluid(maxWidth: 700) {
+                  ...GatsbySanityImageFluid_withWebp
+                }
               }
             }
             slug {
@@ -182,7 +187,9 @@ query HomeQuery {
             headline
             heroImage {
               asset {
-                url
+                fluid(maxWidth: 700) {
+                  ...GatsbySanityImageFluid_withWebp
+                }
               }
             }
             slug {
