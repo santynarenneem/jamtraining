@@ -127,7 +127,7 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
                                                   <div className="sliderDivBlock" key={element.id}>
                                                       <Image className="sliderImage" fluid={element.heroImage.asset.fluid}/>
                                                         <span className="sliderContent">
-                                                            {element.headline} <br/><Link to={element.slug.current}>Go To Article</Link></span>
+                                                            {element.headline} <br/><Link to="">Go To Article</Link></span>
                                                   </div>
 
                                                 );
