@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import {graphql} from 'gatsby'
 import Loadable from "@loadable/component"
 // import Image from 'gatsby-image'
@@ -64,8 +64,8 @@ function home({data}) {
         <Layout>
 
         <SEO title="Home" description="NASA"  />
-                {console.log(data)}
-                {console.log(data.sanityLandingLayout.landingSections)}
+
+
                 {data
                     .sanityLandingLayout
                     .landingSections
