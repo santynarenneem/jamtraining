@@ -1,14 +1,8 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 import Loadable from "@loadable/component"
-// import Image from 'gatsby-image'
-// import Slider from "react-slick";
 import Layout from '../containers/layout'
 
-// import BlockContent from '@sanity/block-content-to-react'
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "../assets/css/home.css";
 import SEO from '../components/seo'
 
