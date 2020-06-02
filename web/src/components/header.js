@@ -17,6 +17,7 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle, data}) => (
 
             <button
             name="Menu_icon"
+            aria-label="Menu Icon"
                 className={styles.toggleNavButton}
                 onClick={showNav
                 ? onHideNav
