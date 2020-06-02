@@ -1,11 +1,11 @@
 import React, { lazy } from 'react'
 import {graphql} from 'gatsby'
 import Loadable from "@loadable/component"
-import Image from 'gatsby-image'
-import Slider from "react-slick";
+// import Image from 'gatsby-image'
+// import Slider from "react-slick";
+import Layout from '../containers/layout'
 
-const Layout = Loadable(() => import('../containers/layout'))
-import BlockContent from '@sanity/block-content-to-react'
+// import BlockContent from '@sanity/block-content-to-react'
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -71,7 +71,7 @@ function home({data}) {
                     .landingSections
                     .map(function (sec) {
                         if (sec.slides == undefined) {
-
+                          const BlockContent = Loadable(() => import('@sanity/block-content-to-react'))
                           return (
 
                             <BlockContent blocks={sec._rawTextBlockBody}/>
@@ -79,6 +79,8 @@ function home({data}) {
                             );
 
                         } else {
+                           const Slider = Loadable(() => import('react-slick'))
+                           const Image = Loadable(() => import('gatsby-image'))
 if(sec.sliderName == "Random Tile Slider Authored Tommy"){
   return (
     <div key={sec.id}>
