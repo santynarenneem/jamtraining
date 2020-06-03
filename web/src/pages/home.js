@@ -170,7 +170,7 @@ query HomeQuery {
             headline
             heroImage {
               asset {
-                fluid(maxWidth: 700) {
+                fluid(maxWidth: 500) {
                   ...GatsbySanityImageFluid_withWebp
                 }
               }
@@ -184,7 +184,7 @@ query HomeQuery {
             headline
             heroImage {
               asset {
-                fluid(maxWidth: 700) {
+                fluid(maxWidth: 500) {
                   ...GatsbySanityImageFluid_withWebp
                 }
               }
