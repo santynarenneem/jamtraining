@@ -1,7 +1,6 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 import Loadable from "@loadable/component"
-import Layout from '../containers/layout'
 
 import "../assets/css/home.css";
 import SEO from '../components/seo'
@@ -55,7 +54,7 @@ const settingsOne = {
 };
 function home({data}) {
     return (
-        <Layout>
+        <div>
 
         <SEO title="Home" description="NASA"  />
 
@@ -138,7 +137,7 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
                       }
                     })}
 
-        </Layout>
+        </div>
     )
 }
 export const data = graphql `
