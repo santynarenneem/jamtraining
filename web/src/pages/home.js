@@ -74,7 +74,7 @@ function home({data}) {
 
                         } else {
 
-                           const Image = Loadable(() => import('gatsby-image'))
+
 if(sec.sliderName == "Random Tile Slider Authored Tommy"){
   const Slider = Loadable(() => import('react-slick'))
   return (
@@ -91,9 +91,11 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
             {sec
                 .slides
                 .map(element => {
+                  const Image = Loadable(() => import('gatsby-image'))
                     return (
                         <div  className="sliderDivTile" key={element.id}>
                         <div  style={{margin:"20px"}}>
+
                         <Image className="sliderImageTile" fluid={element.heroImage.asset.fluid}/>
                             <span className="sliderContentTile">
                                 {element.headline}</span>
@@ -122,6 +124,7 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
                                         {sec
                                             .slides
                                             .map(element => {
+                                              const Image = Loadable(() => import('gatsby-image'))
                                                 return (
                                                   <div className="sliderDivBlock" key={element.id}>
                                                       <Image className="sliderImage" fluid={element.heroImage.asset.fluid}/>
