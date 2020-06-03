@@ -22,7 +22,9 @@ const Header = ({onHideNav, onShowNav, showNav, siteTitle, data}) => (
 
             <nav className={cn(styles.nav, showNav && styles.showNav)}>
                 <ul>
-
+                <li>
+                <Link to="/how_to/">How To Article.</Link>
+            </li>
                     {data
                         .navItems
                         .map(nav => {
