@@ -26,7 +26,7 @@ module.exports = {
       options: {
         name: "NASA ATH",
         short_name: "ATH",
-        start_url: "/home",
+        start_url: "/",
         background_color: "#0099D9",
         theme_color: "#0099D9",
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
@@ -39,5 +39,6 @@ module.exports = {
         crossOrigin: `use-credentials`,
       },
     },
+    'gatsby-plugin-offline'
   ]
 }
