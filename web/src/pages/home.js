@@ -73,13 +73,15 @@ function home({data}) {
                             );
 
                         } else {
-                           const Slider = Loadable(() => import('react-slick'))
+
                            const Image = Loadable(() => import('gatsby-image'))
 if(sec.sliderName == "Random Tile Slider Authored Tommy"){
+  const Slider = Loadable(() => import('react-slick'))
   return (
     <div key={sec.id}>
 
         <h1 className="sliderTileTitle">{sec.sliderName}</h1>
+
         <Slider
             style={{
             margin: 40,
@@ -107,6 +109,7 @@ if(sec.sliderName == "Random Tile Slider Authored Tommy"){
 
 );
 }else{
+  const Slider = Loadable(() => import('react-slick'))
                             return (
                                 <div key={sec.id}>
 
